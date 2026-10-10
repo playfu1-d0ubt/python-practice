@@ -1,6 +1,9 @@
 import random
 import tkinter as tk
 
+MAX_HISTORY = 5
+history = []  # the most recent rolls, as (die1, die2) pairs
+
 def roll_dice():
     """Roll two dice and show each one, plus the total."""
     die1 = random.randint(1, 6)
@@ -10,6 +13,18 @@ def roll_dice():
     double_label.config(text=f"")
     if die1 == die2:
         double_label.config(text=f"DOUBLE")
+    history.append((die1, die2))
+    if len(history) > MAX_HISTORY:
+        history.pop(0)  # forget the oldest roll
+    show_history()
+
+
+def show_history():
+    """Show the recent rolls, newest first."""
+    lines = []
+    for die1, die2 in reversed(history):
+        lines.append(f"{die1} + {die2} = {die1 + die2}")
+    history_label.config(text="\n".join(lines))
         
 
 window = tk.Tk()
@@ -31,5 +46,11 @@ total_label.pack()
 
 double_label = tk.Label(text="", font=("Arial", 24))
 double_label.pack()
+
+history_title = tk.Label(text="Recent rolls", font=("Arial", 12, "bold"))
+history_title.pack(pady=(15, 0))
+
+history_label = tk.Label(text="", font=("Arial", 12))
+history_label.pack()
 
 tk.mainloop()

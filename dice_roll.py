@@ -29,7 +29,7 @@ def show_history():
 
 window = tk.Tk()
 window.title("Dice Game")
-window.geometry("300x300")
+window.minsize(300, 300)
 
 hello = tk.Label(text="Click the button to roll the dice")
 hello.pack()
@@ -48,7 +48,7 @@ double_label = tk.Label(text="", font=("Arial", 24))
 double_label.pack()
 
 history_title = tk.Label(text="Recent rolls", font=("Arial", 12, "bold"))
-history_title.pack(pady=(15, 0))
+history_title.pack(pady=(5, 0))
 
 history_label = tk.Label(text="", font=("Arial", 12))
 history_label.pack()

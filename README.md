@@ -2,7 +2,7 @@
 
 Small Python programs that practise the fundamentals: loops, lists, functions, user input, character codes and a simple window-based (GUI) game. Each one is short enough to read in a few minutes.
 
-## What's in here
+## What it does
 
 | File | What it does | Practises |
 | --- | --- | --- |
@@ -10,6 +10,30 @@ Small Python programs that practise the fundamentals: loops, lists, functions, u
 | `dice_roll.py` | A dice game in a window: click Roll to roll two dice, with a running history of recent rolls | `tkinter`, buttons and labels, functions, lists, `random` |
 | `exercises/loops.py` | A menu of four loop exercises (counting, times tables, multiples of 13) | `for` loops, `range()`, `%`, input checking |
 | `exercises/ascii_names.py` | Shows the ASCII code of every character in two names | `ord()`, list comprehensions |
+
+### Dice game
+
+Click **Roll!** to roll two dice. The window shows each die and the total, and says **DOUBLE** when both dice match. The last five rolls are listed under "Recent rolls", newest first, and **Clear History** empties the list.
+
+![Screenshot of Dice Game](images/Dice-Game.png)
+
+### Message bot example
+
+`message_bot.py` encodes text into character codes, and decodes the same numbers back into text:
+
+```
+1 to encode, 2 to decode, 0 to exit
+:1
+Enter your secret message: Hi
+Encoded: 72, 105
+
+1 to encode, 2 to decode, 0 to exit
+:2
+Enter the numbers, separated by commas: 72, 105
+Decoded: Hi
+```
+
+The terminal programs check their input, so typing letters where a number is expected gives a message and asks again instead of crashing.
 
 ## How to run
 
@@ -32,32 +56,16 @@ python3 exercises/loops.py
 python3 exercises/ascii_names.py
 ```
 
-## Dice game
+## Limitations
 
-Click **Roll!** to roll two dice. The window shows each die and the total, and says **DOUBLE** when both dice match. The last five rolls are listed under "Recent rolls", newest first, and **Clear History** empties the list.
+- These are practice exercises, so each program does one small job.
+- No automated tests yet.
+- The dice game doesn't keep statistics, only the last five rolls.
+- ASCII codes only cover basic characters, but `ord()` works with any character, so accented letters like `é` are handled too.
 
-![Screenshot of Dice Game](images/Dice-Game.png)
-
-## Message bot example
-
-`message_bot.py` encodes text into character codes, and decodes the same numbers back into text:
-
-```
-1 to encode, 2 to decode, 0 to exit
-:1
-Enter your secret message: Hi
-Encoded: 72, 105
-
-1 to encode, 2 to decode, 0 to exit
-:2
-Enter the numbers, separated by commas: 72, 105
-Decoded: Hi
-```
-
-The terminal programs check their input, so typing letters where a number is expected gives a message and asks again instead of crashing.
-
-## Notes
+## What I learned
 
 - Most of these started as early practice exercises that I later tidied up: clearer names, comments, input checking and small bug fixes.
 - The dice game was built in stages: first a button that rolls one die, then two dice with a total, then the roll history, then the DOUBLE message and the Clear History button.
-- ASCII codes only cover basic characters, but `ord()` works with any character, so accented letters like `é` are handled too.
+- Building the dice game taught me how a window program works with buttons, labels and events, which is different from a program that runs from top to bottom in the terminal.
+- Checking input before using it stops a program crashing when someone types something unexpected.

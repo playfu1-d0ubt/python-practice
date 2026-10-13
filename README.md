@@ -8,8 +8,8 @@ Small Python programs that practise the fundamentals: loops, lists, functions, u
 | --- | --- | --- |
 | `message_bot.py` | Turns a message into a list of numbers and back again | `ord()`, `chr()`, loops, lists, functions, input checking |
 | `dice_roll.py` | A dice game in a window: click Roll to roll two dice, with a running history of recent rolls | `tkinter`, buttons and labels, functions, lists, `random` |
-| `exercises/loops.py` | A menu of four loop exercises (counting, times tables, multiples of 13) | `for` loops, `range()`, `%`, input checking |
-| `exercises/ascii_names.py` | Shows the ASCII code of every character in two names | `ord()`, list comprehensions |
+| `loops.py` | A menu of four loop exercises (counting, times tables, multiples of 13) | `for` loops, `range()`, `%`, input checking |
+|`ascii_names.py` | Shows the ASCII code of every character in two names | `ord()`, list comprehensions |
 
 ### Dice game
 
@@ -52,8 +52,8 @@ git clone git@github.com:playfu1-d0ubt/python-practice.git
 cd python-practice
 python3 message_bot.py
 python3 dice_roll.py
-python3 exercises/loops.py
-python3 exercises/ascii_names.py
+python3 loops.py
+python3 ascii_names.py
 ```
 
 ## Limitations

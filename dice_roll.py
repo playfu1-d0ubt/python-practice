@@ -10,9 +10,9 @@ def roll_dice():
     die2 = random.randint(1, 6)
     dice_label.config(text=f"{die1}  and  {die2}")
     total_label.config(text=f"Total: {die1 + die2}")
-    double_label.config(text=f"")
+    double_label.config(text="")
     if die1 == die2:
-        double_label.config(text=f"DOUBLE")
+        double_label.config(text="DOUBLE")
     history.append((die1, die2))
     if len(history) > MAX_HISTORY:
         history.pop(0)  # forget the oldest roll
